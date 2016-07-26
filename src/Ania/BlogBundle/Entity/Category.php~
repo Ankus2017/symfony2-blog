@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ania
+ * Date: 23/07/2016
+ * Time: 21:08
+ */
+
+namespace Ania\BlogBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="blog_categories")
+ */
+class Category extends AbstractTaxonomy
+{
+
+    /**
+     * @ORM\OneToMany(
+     *      targetEntity = "Post",
+     *      mappedBy = "category"
+     * )
+     */
+    protected $posts;
+}
